@@ -23,7 +23,6 @@
         }
 
         body {
-            overflow: scroll;
             background: #f0f0f0;
         }
     </style>
@@ -44,11 +43,11 @@
         <div id="navbar" class="navbar-collapse collapse">
             <div class="navbar-form navbar-left">
                 <ul class="nav navbar-nav">
-                    <li><a ui-sref="user-view({userId: currentUser.id})">
+                    <li><a ui-sref="patient-list">
                         <span class="glyphicon glyphicon-user"></span>&nbsp;Мої пацієнти
                     </a></li>
                     <li>
-                        <a ui-sref="user-friends({userId: currentUser.id})">
+                        <a ui-sref="all-patient-list">
                             <span class="fa fa-users"></span>&nbsp;Всі пацієнти
                         </a>
                     </li>
@@ -81,21 +80,17 @@
 
 <script src="app/app.js"></script>
 <script src="app/home/home-controller.js"></script>
-<script src="app/user/user-module.js"></script>
-<script src="app/user/list/user-list-controller.js"></script>
-<script src="app/user/view/user-view-controller.js"></script>
+<script src="app/card/card-module.js"></script>
+<script src="app/card/list/all-patient-list-controller.js"></script>
+<script src="app/card/view/card-view-controller.js"></script>
 <script src="app/login/login-controller.js"></script>
 <script src="app/register/register-controller.js"></script>
 <script src="app/microblog/microblog-controller.js"></script>
 <script src="app/microblog/microblog-component.js"></script>
-<script src="app/user/logout/logout-controller.js"></script>
-<script src="app/user/behavior/ignore-controller.js"></script>
-<script src="app/user/friend/friend-controller.js"></script>
-<script src="app/user/friend/friend-behavior-controller.js"></script>
-<script src="app/user/friend/incoming/incoming-request-controller.js"></script>
-<script src="app/user/friend/outgoing/outgoing-request-controller.js"></script>
+<script src="app/card/logout/logout-controller.js"></script>
 <script src="app/upload/upload-controller.js"></script>
 <script src="app/conversation/conversation-controller.js"></script>
 <script src="app/registerPersonal/register-personal-controller.js"></script>
+<script src="app/card/patient-list/patient-list-controller.js"></script>
 </body>
 </html>

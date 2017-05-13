@@ -1,5 +1,5 @@
 angular
-    .module('ssnApp', ['ui.router', 'ssnApp.user', 'ngFileUpload', 'ngImgCrop'])
+    .module('ssnApp', ['ui.router', 'ssnApp.card', 'ngFileUpload', 'ngImgCrop'])
     .run(($rootScope, $http) => {
         if (localStorage.token !== undefined) {
             $http

@@ -318,6 +318,6 @@ label:hover:before {
 .flexContainer {
     display: flex;
 }
-div.jumbotron{
-    padding: 0;
+.logo{
+    font-style: uppercase;
 }

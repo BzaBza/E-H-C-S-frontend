@@ -13,7 +13,7 @@ function LoginController($scope, $http, $location, $rootScope) {
                     .get('/api/users/currentUser')
                     .then((res) => {
                         $rootScope.currentUser = res.data;
-                        $location.path('/user/' + res.data.id);
+                        $location.path('/patient-list');
                     });
             });
     };

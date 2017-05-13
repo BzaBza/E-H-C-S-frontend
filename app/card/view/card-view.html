@@ -1,0 +1,141 @@
+<div class="text-center patientInfo">
+    <ul>
+        <li>{{card.patient.fullName}}</li>
+        <li>{{card.patient.birthday}}</li>
+        <li>{{card.patient.sex}}</li>
+        <li>{{card.patient.user.fullName}}</li>
+        <li>{{card.patient.phone}}</li>
+        <li>{{card.patient.email}}</li>
+        <li id="patientPhoto"><img src="img\patientNamber1.jpg"
+                                   alt="photo"></li>
+    </ul>
+</div>
+<!--<div class="col-md-5">-->
+    <!--<h4 class="text-center">історія</h4>-->
+    <!--<div class="chat1">-->
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-body">-->
+                <!--<p>{{$ctrl.microblog.text}}</p>-->
+                <!--<p>{{$ctrl.microblog.creationTime}}</p>-->
+                <!--<hr>-->
+                <!--<div class="panel panel-default">-->
+                    <!--<div class="panel-body">-->
+                        <!--<div ng-repeat="commentary in $ctrl.microblog.commentaries">-->
+                            <!--<div class="panel panel-default" id="panel2">-->
+                                <!--<div class="panel-body">-->
+                                    <!--<p>-->
+                                        <!--<a ui-sref="user-view({userId: commentary.user.id})">{{commentary.user.name}}</a>-->
+                                    <!--</p>-->
+                                    <!--<p>{{commentary.text}}</p>-->
+                                    <!--<p>{{commentary.creationTime}}</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="flexContainer">-->
+                            <!--<label for="comment" class="sr-only">Comment</label>-->
+                            <!--<input type="text" ng-model="commentaryForm.text" class="form-control"-->
+                                   <!--id="comment"-->
+                                   <!--name="comment" placeholder="коментар лікаря">-->
+                            <!--<button ng-click="$ctrl.addComment($ctrl.microblog.id, commentaryForm)" class="btn"-->
+                                    <!--style="float: right;"-->
+                                    <!--type="button">-->
+                                <!--<span class="glyphicon glyphicon-menu-right"></span>-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<div class="container" ng-repeat="record in card.microblogs">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6"><br><br><br>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p><a>{{record.users[0].fullName}}</a></p>
+                    <p>{{record.text}}</p>
+                    <p>{{record.creationTime}}</p>
+
+                    <hr>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div ng-repeat="commentary in $ctrl.microblog.commentaries">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <p>
+                                            <a ui-sref="user-view({userId: commentary.user.id})">{{commentary.user.name}}</a>
+                                        </p>
+                                        <p>{{commentary.text}}</p>
+                                        <p>{{commentary.creationTime}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flexContainer">
+                                <label for="comment" class="sr-only">Comment</label>
+                                <input type="text" ng-model="commentaryForm.text" class="form-control"
+                                       id="comment"
+                                       name="comment" placeholder="Leave a comment...">
+
+                                <button ng-click="$ctrl.addComment($ctrl.microblog.id, commentaryForm)" class="btn"
+                                        style="float: right;"
+                                        type="button">
+                                    <span class="glyphicon glyphicon-menu-right"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--costil-->
+<div class="col-md-2"></div>
+<!--costil-->
+
+<div class="col-md-5">
+    <h4 class="text-center">показники пацієнта</h4>
+    <div class="chat2">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p><a ui-sref="user-view({userId: microblog.user.id})">{{$ctrl.microblog.user.name}}</a></p>
+                <p>{{$ctrl.microblog.text}}</p>
+                <p>{{$ctrl.microblog.creationTime}}</p>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div ng-repeat="commentary in $ctrl.microblog.commentaries">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p>
+                                        <a ui-sref="user-view({userId: commentary.user.id})">{{commentary.user.name}}</a>
+                                    </p>
+                                    <p>{{commentary.text}}</p>
+                                    <p>{{commentary.creationTime}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexContainer">
+                            <label for="comment" class="sr-only">Comment</label>
+                            <input type="text" ng-model="commentaryForm.text" class="form-control"
+                                   id="comment"
+                                   name="comment" placeholder="данні з пацієнта">
+
+                            <button ng-click="$ctrl.addComment($ctrl.microblog.id, commentaryForm)" class="btn"
+                                    style="float: right;"
+                                    type="button">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

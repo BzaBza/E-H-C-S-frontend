@@ -1,40 +1,46 @@
-.patientInfo{
-    margin-top:5em;
+.jumbotron{
+    padding: 0;
 }
-.patientInfo ul{
-    padding-right: 1em;
-    width: 100%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border: 1px solid black;
+h4{
+    border:1px solid rgba(0, 0, 0, 0.0);
+    border-radius: 40px;
+    background-color: #0000;
+}
+.patientInfo {
+    margin-top: 5em;
+}
 
+.patientInfo ul {
+    background-color: #d4d4d4;
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
 }
-.patientInfo ul li{
+
+.patientInfo ul li {
+    background-color: #F0F0F0;
     padding: 0.5em;
     display: inline-block;
     margin-left: 4em;
-    border: 2px inset black;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 44px;
     text-align: center;
 }
-.panel-body{
+
+.panel-body {
     width: 100%;
 }
-#patientPhoto{
+
+#patientPhoto {
     padding: 0;
     border: none;
 }
 
- #patientPhoto img{
+#patientPhoto img {
     max-width: 90px;
+    border-radius: 70px;
 }
-.chat1{
-    border:1px solid black;
-    height: 100%;
-}
-.chat2{
-    border:1px solid black;
 
-}
-input #comment{
+input #comment {
 
 }

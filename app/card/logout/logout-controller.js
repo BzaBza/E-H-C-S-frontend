@@ -1,5 +1,5 @@
 angular
-    .module('ssnApp.user')
+    .module('ssnApp.card')
     .controller('LogoutController', LogoutController);
 
 function LogoutController($location, $rootScope) {

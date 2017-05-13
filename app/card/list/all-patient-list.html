@@ -16,9 +16,10 @@
     </div>
     <br>
     <table class="table table-stripped">
-        <tr ng-repeat="user in users">
-            <td><a ui-sref="user-view({userId: user.id})">{{user.username}}</a></td>
-            <td>{{user.name}}</td>
+        <tr ng-repeat="patient in patients">
+            <td><a ui-sref="card-view({cardId: patient.id})">{{patient.fullName}}</a></td>
+            <!--<td><a>{{patient.fullName}}</a></td>-->
+            <td>{{patient.registerDate}}</td>
         </tr>
     </table>
 </div>

@@ -1,0 +1,25 @@
+<div class="search-cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group" id="adv-search">
+                    <input type="text" class="form-control" placeholder="Search for snippets"/>
+                    <div class="input-group-btn">
+                        <div class="btn-group" role="group">
+                            </div>
+                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"
+                                                                                aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <table class="table table-stripped">
+        <tr ng-repeat="patient in patients">
+            <td><a ui-sref="card-view({cardId: patient.id})">{{patient.fullName}}</a></td>
+            <!--<td><a>{{patient.fullName}}</a></td>-->
+            <td>{{patient.registerDate}}</td>
+        </tr>
+    </table>
+</div>
