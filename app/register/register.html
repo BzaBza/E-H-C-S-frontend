@@ -1,0 +1,155 @@
+
+<div ng-controller="RegisterController">
+    <div class="text-center" style="padding:50px 0">
+        <div ng-if="afterRegisterToken[0].qr">
+            <div class="logo">Scan QR code or register Secret Key in your Authenticator Application</div>
+        </div>
+        <div class="logo" ng-hide="afterRegisterToken[0].qr">реєстрація пацієнта</div>
+        <div class="login-form-1">
+            <form id="register-form" class="text-left" ng-hide="afterRegisterToken[0]">
+                <div class="login-form-main-message"></div>
+                <div class="main-login-form">
+                    <div class="login-group">
+                        <div class="form-group">
+                            <label for="reg_username" class="sr-only">Логін</label>
+                            <input type="text" ng-model="userRegisterForm.login" class="form-control"
+                                   id="reg_username" name="reg_username"
+                                   placeholder="Логін">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg_password" class="sr-only">Пароль</label>
+                            <input type="password" ng-model="userRegisterForm.password" class="form-control"
+                                   id="reg_password" name="reg_password"
+                                   placeholder="Пароль">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg_password_confirm" class="sr-only">Підтвердження Паролю</label>
+                            <input type="password" ng-model="userRegisterForm.confirmPassword" class="form-control"
+                                   id="reg_password_confirm"
+                                   name="reg_password_confirm" placeholder="Підтвердження Паролю">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg_email" class="sr-only">Емейл</label>
+                            <input type="email" ng-model="userRegisterForm.email" class="form-control" id="reg_email"
+                                   name="reg_email" placeholder="Емейл">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg_fullname" class="sr-only">Повне Ім'я</label>
+                            <input type="text" ng-model="userRegisterForm.fullName" class="form-control" id="reg_fullname"
+                                   name="reg_fullname"
+                                   placeholder="Повне Ім'я">
+                        </div>
+
+                        <div class="flexContainer">
+                            <div class="form-group">
+                                <label for="reg_phone" class="sr-only">Номер Телефону</label>
+                                <input type="text" ng-model="userRegisterForm.phone" class="form-control" id="reg_phone"
+                                       name="reg_phone" placeholder="Номер Телефону">
+                            </div>
+
+                            <button class="btn btn-default" style="float: right;" data-toggle="modal"
+                                    data-target="#smallModal">
+                                <img src="/public/pic/info_8x16.png" width="5"/>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg_birthday" class="sr-only">Дата Народження</label>
+                            <input type="date" ng-model="userRegisterForm.birthday" class="form-control"
+                                   id="reg_birthday"
+                                   name="reg_birthday" placeholder="Дата Народження">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg_address" class="sr-only">Адрес</label>
+                            <input type="text" ng-model="userRegisterForm.address" class="form-control" id="reg_address"
+                                   name="reg_address"
+                                   placeholder="Адрес">
+                        </div>
+
+                        <div>
+                            <br>
+                            <div class="form-group">
+                                <label for="reg_countryId" class="sr-only">Країна</label>
+                                <select ng-model="userRegisterForm.countryId" class="form-control" id="reg_countryId"
+                                        name="reg_countryId" ng-change="getCities(userRegisterForm.countryId)">
+                                    <option disabled value="">Країна</option>
+                                    <option ng-repeat="country in countries" value="{{country.id}}">{{country.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div>
+                            <div class="form-group">
+                                <label for="reg_cityId" class="sr-only">Місто/Село</label>
+                                <select ng-model="userRegisterForm.cityId" class="form-control" id="reg_cityId"
+                                        name="reg_cityId">
+                                    <option disabled value="">Місто/Село</option>
+                                    <option ng-repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+                                </select>
+                            </div>
+                            <br>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="reg_sex" class="sr-only">Стать</label>
+                                <select ng-model="userRegisterForm.sex" class="form-control" id="reg_sex"
+                                        name="reg_sex">
+                                    <option disabled value="">Стать</option>
+                                    <option  value="MALE">чоловіча</option>
+                                    <option  value="FEMALE">жіноча</option>
+                                </select>
+                            </div>
+                            <br>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="reg_doctor" class="sr-only">Стать</label>
+                                <select ng-model="userRegisterForm.doctorId" class="form-control" id="reg_doctor"
+                                        name="reg_doctor">
+                                    <option disabled value="">Лікар</option>
+                                    <option ng-repeat="doctor in doctors" value="{{doctor.id}}">{{doctor.fullName}}</option>
+                                </select>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">Available phone number formats:</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>+380630000000, 0630000000,</p>
+                                        <p> 063-000-0000 x1234, </p>
+                                        <p>063-000-0000 ext1234,</p>
+                                        <p> 063-000-0000, (063)-000-0000,</p>
+                                        <p> 063.000.0000, 063 000 0000</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" ng-click="register(userRegisterForm)" class="login-button"><i
+                            class="fa fa-chevron-right"></i></button>
+                </div>
+            </form>
+            <div ng-hide="!afterRegisterToken[0].qr">
+                <img ng-src="{{afterRegisterToken[0].qr}}" alt="QR">
+                <br>
+                *Secret Key: {{afterRegisterToken[0].secretKey}}<br>
+            </div>
+        </div>
+    </div>
+</div>

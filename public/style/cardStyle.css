@@ -1,0 +1,40 @@
+.patientInfo{
+    margin-top:5em;
+}
+.patientInfo ul{
+    padding-right: 1em;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 1px solid black;
+
+}
+.patientInfo ul li{
+    padding: 0.5em;
+    display: inline-block;
+    margin-left: 4em;
+    border: 2px inset black;
+    text-align: center;
+}
+.panel-body{
+    width: 100%;
+}
+#patientPhoto{
+    padding: 0;
+    border: none;
+}
+
+ #patientPhoto img{
+    max-width: 90px;
+}
+.chat1{
+    border:1px solid black;
+    height: 100%;
+}
+.chat2{
+    border:1px solid black;
+
+}
+input #comment{
+
+}
