@@ -26,8 +26,11 @@ module.exports = function (grunt) {
                 proxies: [
                     {
                         context: '/api',
-                        host: '127.0.0.1',
-                        port: 8080
+                        host: 'aelmod.sytes.net',
+                        port: 4567,
+                        headers: {
+                            host: 'aelmod.sytes.net'
+                        }
                     },
                     {
                         context: '/',
