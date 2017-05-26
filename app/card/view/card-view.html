@@ -50,7 +50,7 @@
 <!--</div>-->
 
 
-<div class="container" ng-repeat="record in card.microblogs">
+<div class="container" ng-repeat="record in card.cardRecords">
     <div class="row">
         <div class="col-md-offset-3 col-md-6"><br><br><br>
             <div class="panel panel-default">
@@ -78,7 +78,7 @@
                                 <label for="comment" class="sr-only">Comment</label>
                                 <input type="text" ng-model="commentaryForm.text" class="form-control"
                                        id="comment"
-                                       name="comment" placeholder="Leave a comment...">
+                                       name="comment" placeholder="Доповнення">
 
                                 <button ng-click="$ctrl.addComment($ctrl.microblog.id, commentaryForm)" class="btn"
                                         style="float: right;"
