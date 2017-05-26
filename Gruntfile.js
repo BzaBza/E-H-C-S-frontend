@@ -18,7 +18,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     hostname: '0.0.0.0',
-                    port: 8000,
+                    port: process.env.PORT,
                     middleware: function (connect) {
                         return [proxySnippet];
                     }
