@@ -18,12 +18,6 @@ angular
                 templateUrl: 'app/home/home.html'
             })
             .state({
-                name: 'conversation',
-                url: '/conversation',
-                controller: 'ConversationController',
-                templateUrl: 'app/conversation/conversation-view.html'
-            })
-            .state({
                 name: 'login',
                 url: '/login',
                 templateUrl: 'app/login/login.html'
